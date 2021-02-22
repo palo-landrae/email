@@ -1,18 +1,20 @@
-<div style="width: 400px;">
-  <form>
-    <h3>Nuovo Messagio</h3>
-    <div>
-      <input name="destinatari" placeholder="A" #destinatario>
+<div class="container">
+  <form class="jumbotron">
+    <div class="bg-dark" style="height: 50px;">
+      <h4 class="text-white p-2">Nuovo Messagio</h4>
     </div>
-    <div>
-      <input name="oggetto" placeholder="Oggetto" #oggetto>
+    <div class="container bg-white">
+      <div class="form-group">
+        <input name="destinatari" placeholder="A" #destinatario>
+        <input name="oggetto" placeholder="Oggetto" #oggetto>
+        <textarea rows="8" style="resize: none; width: 100%;" #corpo></textarea>
+      </div>
+      <button (click)="invia(destinatario, oggetto, corpo)" class="bg-primary btn text-white"
+        style="width: 80px;margin-bottom: 15px;">
+        Invia
+      </button>
     </div>
-    <div>
-      <textarea rows="8" style="resize: none; width: 100%;" #corpo></textarea>
-    </div>
-    <button (click)="invia(destinatario, oggetto, corpo)" style="background-color: orange; float: right;">Invia</button>
   </form>
+  <br>
+  <app-sentmail *ngFor="let email of emails" [email]="email"></app-sentmail>
 </div>
-
-<app-sentmail *ngFor="let email of emails" [email] = "email"></app-sentmail>
-
