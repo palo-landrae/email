@@ -13,3 +13,6 @@
     <button (click)="invia(destinatario, oggetto, corpo)" style="background-color: orange; float: right;">Invia</button>
   </form>
 </div>
+
+<app-sentmail *ngFor="let email of emails" [email] = "email"></app-sentmail>
+

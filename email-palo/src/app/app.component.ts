@@ -10,12 +10,7 @@ export class AppComponent {
   emails = new Array<Email>();
 
   invia(destinatari: HTMLInputElement, oggetto: HTMLInputElement, corpo: HTMLInputElement): boolean {
-    let x = new Array<string>();
-    if (destinatari.value.indexOf(',') === -1){
-      x = destinatari.value.split(',');
-    }else{
-      x[0] = destinatari.value;
-    }
+    var x = destinatari.value.split(',');
     let y = oggetto.value;
     let z = corpo.value;
     this.emails.push(new Email(x,y,z))

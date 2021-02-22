@@ -1,0 +1,7 @@
+<div>
+  <h5>{{email.oggetto}} - {{email.destinatari}}</h5>
+  <button (click)="espandi()" style="background-color: orange; float: right;">Espandi</button>
+  <p *ngIf="email.espanso">{{email.corpo}}</p>
+</div>
+
+<br>
